@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { calculateSalary, SalaryResult } from "@/lib/calculators/salary";
 import { formatKRW, formatNumber } from "@/lib/utils";
+import { trackCalculatorUse } from "@/lib/analytics";
 
 export default function SalaryCalculator() {
   const [annualSalary, setAnnualSalary] = useState("");
@@ -19,6 +20,7 @@ export default function SalaryCalculator() {
       nonTaxableIncome: parseInt(nonTaxable.replace(/,/g, ""), 10) || 0,
     });
     setResult(res);
+    trackCalculatorUse("salary", { annual_salary: salary });
   }
 
   function formatInput(value: string): string {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { calculateAcquisitionTax, AcquisitionTaxResult } from "@/lib/calculators/acquisition-tax";
 import { formatKRW, formatNumber } from "@/lib/utils";
+import { trackCalculatorUse } from "@/lib/analytics";
 
 export default function AcquisitionTaxCalculator() {
   const [price, setPrice] = useState("");
@@ -23,6 +24,7 @@ export default function AcquisitionTaxCalculator() {
       isAdjustedArea: isAdjusted,
     });
     setResult(res);
+    trackCalculatorUse("acquisition_tax", { property_type: propertyType });
   }
 
   function formatInput(value: string): string {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { calculatePropertyTax, PropertyTaxResult } from "@/lib/calculators/property-tax";
 import { formatKRW, formatNumber } from "@/lib/utils";
+import { trackCalculatorUse } from "@/lib/analytics";
 
 export default function PropertyTaxCalculator() {
   const [publicPrice, setPublicPrice] = useState("");
@@ -33,6 +34,7 @@ export default function PropertyTaxCalculator() {
       holdingYears: parseInt(holdingYears, 10),
     });
     setResult(res);
+    trackCalculatorUse("property_tax", { property_type: propertyType });
   }
 
   return (

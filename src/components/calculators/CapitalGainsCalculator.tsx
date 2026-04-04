@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { calculateCapitalGains, CapitalGainsResult } from "@/lib/calculators/capital-gains";
 import { formatKRW, formatNumber } from "@/lib/utils";
+import { trackCalculatorUse } from "@/lib/analytics";
 
 export default function CapitalGainsCalculator() {
   const [transferPrice, setTransferPrice] = useState("");
@@ -38,6 +39,7 @@ export default function CapitalGainsCalculator() {
       propertyType,
     });
     setResult(res);
+    trackCalculatorUse("capital_gains", { property_type: propertyType });
   }
 
   return (

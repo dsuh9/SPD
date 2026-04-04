@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { calculateIncomeTax, IncomeTaxResult } from "@/lib/calculators/income-tax";
 import { formatKRW, formatNumber } from "@/lib/utils";
+import { trackCalculatorUse } from "@/lib/analytics";
 
 export default function IncomeTaxCalculator() {
   const [earnedIncome, setEarnedIncome] = useState("");
@@ -40,6 +41,7 @@ export default function IncomeTaxCalculator() {
       personalDeductions: 0,
     });
     setResult(res);
+    trackCalculatorUse("income_tax");
   }
 
   const InputField = ({
