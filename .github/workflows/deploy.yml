@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  RAILWAY_SERVICE_ID: "625ce75c-3e3b-438c-a5a7-d244855d992f"
+  RAILWAY_SERVICE_ID: "f4617425-7d32-4a61-aa2f-4067ea0a517d"
   RAILWAY_ENV_ID: "b86a05be-e939-40f2-b100-c6b98a32c309"
 
 jobs:
