@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LoanCalculator from "@/components/calculators/LoanCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://divine-rejoicing-production.up.railway.app";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
 
 export const metadata: Metadata = {
   title: "대출이자 계산기 2026 - 원리금균등·원금균등·만기일시 상환",
