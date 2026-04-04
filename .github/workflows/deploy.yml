@@ -7,6 +7,8 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  RAILWAY_SERVICE_ID: "625ce75c-3e3b-438c-a5a7-d244855d992f"
+  RAILWAY_ENV_ID: "b86a05be-e939-40f2-b100-c6b98a32c309"
 
 jobs:
   build-and-deploy:
@@ -44,20 +46,32 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Update Railway service with new image
+      - name: Make package public
+        run: |
+          curl -s -X PATCH \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/user/packages/container/SPD" \
+            -d '{"visibility":"public"}' | head -c 200 || true
+
+      - name: Deploy to Railway via GraphQL API
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           IMAGE_TAG: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
         run: |
+          echo "Connecting image to Railway service..."
           curl -s -X POST \
             -H "Authorization: Bearer $RAILWAY_TOKEN" \
             -H "Content-Type: application/json" \
             "https://backboard.railway.app/graphql/v2" \
-            -d "{\"query\": \"mutation { serviceConnect(id: \\\"1528cf7b-c24b-4611-bd53-8ef00dde0dd3\\\", input: { image: \\\"$IMAGE_TAG\\\" }) { id } }\"}"
-          
-          # Trigger redeploy
+            -d "{\"query\": \"mutation { serviceConnect(id: \\\"$RAILWAY_SERVICE_ID\\\", input: { image: \\\"$IMAGE_TAG\\\" }) { id } }\"}"
+
+          echo ""
+          echo "Triggering Railway deployment..."
           curl -s -X POST \
             -H "Authorization: Bearer $RAILWAY_TOKEN" \
             -H "Content-Type: application/json" \
             "https://backboard.railway.app/graphql/v2" \
-            -d '{"query": "mutation { serviceInstanceRedeploy(environmentId: \"b86a05be-e939-40f2-b100-c6b98a32c309\", serviceId: \"1528cf7b-c24b-4611-bd53-8ef00dde0dd3\") }"}'
+            -d "{\"query\": \"mutation { serviceInstanceRedeploy(environmentId: \\\"$RAILWAY_ENV_ID\\\", serviceId: \\\"$RAILWAY_SERVICE_ID\\\") }\"}"
+          echo ""
+          echo "Deployment triggered!"
