@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calculator, Home, TrendingUp, FileText, Building } from "lucide-react";
+import { Calculator, Home, TrendingUp, FileText, Building, Banknote, CreditCard, Receipt } from "lucide-react";
 
 const calculators = [
   {
@@ -42,6 +42,30 @@ const calculators = [
     keywords: "종합부동산세, 종부세, 부동산 보유세",
     color: "red",
   },
+  {
+    href: "/severance",
+    icon: Banknote,
+    title: "퇴직금 계산기",
+    description: "입사일·퇴사일·월평균임금 기반으로 법정 퇴직금을 계산합니다. 상여금, 연차수당 포함.",
+    keywords: "퇴직금, 근속연수, 평균임금, 법정퇴직금",
+    color: "teal",
+  },
+  {
+    href: "/loan",
+    icon: CreditCard,
+    title: "대출이자 계산기",
+    description: "원리금균등·원금균등·만기일시 상환 방식별 이자 및 월 상환액을 계산합니다.",
+    keywords: "대출이자, 원리금균등, 원금균등, 주택담보대출",
+    color: "indigo",
+  },
+  {
+    href: "/vat",
+    icon: Receipt,
+    title: "부가세(VAT) 계산기",
+    description: "공급가액 ↔ 부가세 포함가 변환, 부가세 신고 예상 매출세액을 계산합니다.",
+    keywords: "부가세, VAT, 공급가액, 부가가치세 신고",
+    color: "violet",
+  },
 ];
 
 const colorMap = {
@@ -70,6 +94,21 @@ const colorMap = {
     icon: "text-red-600",
     hover: "hover:border-red-300 hover:bg-red-50/50",
   },
+  teal: {
+    bg: "bg-teal-50",
+    icon: "text-teal-600",
+    hover: "hover:border-teal-300 hover:bg-teal-50/50",
+  },
+  indigo: {
+    bg: "bg-indigo-50",
+    icon: "text-indigo-600",
+    hover: "hover:border-indigo-300 hover:bg-indigo-50/50",
+  },
+  violet: {
+    bg: "bg-violet-50",
+    icon: "text-violet-600",
+    hover: "hover:border-violet-300 hover:bg-violet-50/50",
+  },
 };
 
 export default function HomePage() {
@@ -81,7 +120,7 @@ export default function HomePage() {
           한국 세금 계산기
         </h1>
         <p className="text-gray-500 text-lg">
-          연봉, 부동산 세금을 쉽고 빠르게 계산하세요
+          연봉, 부동산 세금, 퇴직금, 대출이자, 부가세를 쉽고 빠르게 계산하세요
         </p>
         <p className="text-sm text-gray-400 mt-2">2025-2026년 최신 세법 기준</p>
       </div>
