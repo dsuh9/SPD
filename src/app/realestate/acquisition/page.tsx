@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AcquisitionTaxCalculator from "@/components/calculators/AcquisitionTaxCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://divine-rejoicing-production.up.railway.app";
 
 export const metadata: Metadata = {
   title: "취득세 계산기 2026 - 부동산 취득세 자동계산",

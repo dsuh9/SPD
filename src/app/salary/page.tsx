@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SalaryCalculator from "@/components/calculators/SalaryCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://divine-rejoicing-production.up.railway.app";
 
 export const metadata: Metadata = {
   title: "연봉 실수령액 계산기 2026 - 4대보험, 소득세 자동계산",

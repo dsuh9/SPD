@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import VatCalculator from "@/components/calculators/VatCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://divine-rejoicing-production.up.railway.app";
 
 export const metadata: Metadata = {
   title: "부가세 계산기 2026 - 공급가액·부가세 포함가 변환",
