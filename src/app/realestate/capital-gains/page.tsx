@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CapitalGainsCalculator from "@/components/calculators/CapitalGainsCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://korean-calc.vercel.app";
 
 export const metadata: Metadata = {
   title: "양도소득세 계산기 2026 - 1세대1주택 비과세 자동판단",

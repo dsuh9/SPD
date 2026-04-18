@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SeveranceCalculator from "@/components/calculators/SeveranceCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://korean-calc.vercel.app";
 
 export const metadata: Metadata = {
   title: "퇴직금 계산기 2026 - 근속연수별 퇴직금 자동계산",

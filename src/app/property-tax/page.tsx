@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PropertyTaxCalculator from "@/components/calculators/PropertyTaxCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://korean-calc.vercel.app";
 
 export const metadata: Metadata = {
   title: "종합부동산세 계산기 2026 - 종부세 자동계산",
