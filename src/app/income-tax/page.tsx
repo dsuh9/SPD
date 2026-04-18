@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import IncomeTaxCalculator from "@/components/calculators/IncomeTaxCalculator";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://divine-rejoicing-production.up.railway.app";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://taxcalc.kr";
 
 export const metadata: Metadata = {
   title: "종합소득세 계산기 2026 - 프리랜서/사업자 세금계산",
