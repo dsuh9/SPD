@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calculator, Home, TrendingUp, FileText, Building, Banknote, CreditCard, Receipt, Gift, ArrowLeftRight, CalendarCheck, Car, HeartPulse } from "lucide-react";
+import { Calculator, Home, TrendingUp, FileText, Building, Banknote, CreditCard, Receipt, Gift, ArrowLeftRight, CalendarCheck, Car, HeartPulse, BarChart3 } from "lucide-react";
 
 const calculators = [
   {
@@ -106,6 +106,14 @@ const calculators = [
     keywords: "건강보험료, 장기요양보험, 직장가입자, 지역가입자",
     color: "cyan",
   },
+  {
+    href: "/stock-tax",
+    icon: BarChart3,
+    title: "주식 수익 세금 계산기",
+    description: "국내·미국 주식, ETF별 양도세·거래세·수수료를 반영한 실수익을 계산합니다.",
+    keywords: "주식 세금, 양도소득세, 증권거래세, 미국 주식, ETF",
+    color: "lime",
+  },
 ];
 
 const colorMap = {
@@ -173,6 +181,11 @@ const colorMap = {
     bg: "bg-cyan-50",
     icon: "text-cyan-600",
     hover: "hover:border-cyan-300 hover:bg-cyan-50/50",
+  },
+  lime: {
+    bg: "bg-lime-50",
+    icon: "text-lime-600",
+    hover: "hover:border-lime-300 hover:bg-lime-50/50",
   },
 };
 
