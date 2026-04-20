@@ -12,6 +12,9 @@ const navItems = [
   { href: "/realestate/capital-gains", label: "양도소득세" },
   { href: "/income-tax", label: "종합소득세" },
   { href: "/property-tax", label: "종합부동산세" },
+  { href: "/inheritance-gift-tax", label: "상속·증여세" },
+  { href: "/year-end-tax", label: "연말정산" },
+  { href: "/jeonse-wolse", label: "전월세" },
 ];
 
 export default function Header() {

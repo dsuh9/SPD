@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calculator, Home, TrendingUp, FileText, Building, Banknote, CreditCard, Receipt } from "lucide-react";
+import { Calculator, Home, TrendingUp, FileText, Building, Banknote, CreditCard, Receipt, Gift, ArrowLeftRight, CalendarCheck, Car, HeartPulse } from "lucide-react";
 
 const calculators = [
   {
@@ -66,6 +66,46 @@ const calculators = [
     keywords: "부가세, VAT, 공급가액, 부가가치세 신고",
     color: "violet",
   },
+  {
+    href: "/inheritance-gift-tax",
+    icon: Gift,
+    title: "상속세·증여세 계산기",
+    description: "상속·증여 재산에 대한 세액을 계산합니다. 세대생략 할증, 신고공제 반영.",
+    keywords: "상속세, 증여세, 증여공제, 세대생략 할증",
+    color: "emerald",
+  },
+  {
+    href: "/jeonse-wolse",
+    icon: ArrowLeftRight,
+    title: "전월세 전환 계산기",
+    description: "전세 ↔ 월세 상호 전환. 법정 전환율(2.5%) 기준 적정 월세를 계산합니다.",
+    keywords: "전월세 전환, 전세 월세, 법정 전환율, 보증금",
+    color: "sky",
+  },
+  {
+    href: "/year-end-tax",
+    icon: CalendarCheck,
+    title: "연말정산 계산기",
+    description: "소득·세액공제를 반영한 연말정산 예상 환급액 또는 추가 납부액을 계산합니다.",
+    keywords: "연말정산, 소득공제, 세액공제, 환급액, 13월의 월급",
+    color: "amber",
+  },
+  {
+    href: "/vehicle-tax",
+    icon: Car,
+    title: "자동차세 계산기",
+    description: "배기량·전기차별 자동차세, 차령 경감, 연납 할인을 계산합니다.",
+    keywords: "자동차세, 배기량, 전기차 세금, 연납 할인",
+    color: "rose",
+  },
+  {
+    href: "/health-insurance",
+    icon: HeartPulse,
+    title: "건강보험료 계산기",
+    description: "직장·지역 가입자 건강보험료와 장기요양보험료를 계산합니다.",
+    keywords: "건강보험료, 장기요양보험, 직장가입자, 지역가입자",
+    color: "cyan",
+  },
 ];
 
 const colorMap = {
@@ -109,6 +149,31 @@ const colorMap = {
     icon: "text-violet-600",
     hover: "hover:border-violet-300 hover:bg-violet-50/50",
   },
+  emerald: {
+    bg: "bg-emerald-50",
+    icon: "text-emerald-600",
+    hover: "hover:border-emerald-300 hover:bg-emerald-50/50",
+  },
+  sky: {
+    bg: "bg-sky-50",
+    icon: "text-sky-600",
+    hover: "hover:border-sky-300 hover:bg-sky-50/50",
+  },
+  amber: {
+    bg: "bg-amber-50",
+    icon: "text-amber-600",
+    hover: "hover:border-amber-300 hover:bg-amber-50/50",
+  },
+  rose: {
+    bg: "bg-rose-50",
+    icon: "text-rose-600",
+    hover: "hover:border-rose-300 hover:bg-rose-50/50",
+  },
+  cyan: {
+    bg: "bg-cyan-50",
+    icon: "text-cyan-600",
+    hover: "hover:border-cyan-300 hover:bg-cyan-50/50",
+  },
 };
 
 export default function HomePage() {
@@ -120,7 +185,7 @@ export default function HomePage() {
           한국 세금 계산기
         </h1>
         <p className="text-gray-500 text-lg">
-          연봉, 부동산 세금, 퇴직금, 대출이자, 부가세를 쉽고 빠르게 계산하세요
+          연봉, 부동산, 상속·증여, 연말정산, 전월세 등 다양한 세금을 쉽고 빠르게 계산하세요
         </p>
         <p className="text-sm text-gray-400 mt-2">2025-2026년 최신 세법 기준</p>
       </div>
